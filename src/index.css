@@ -117,8 +117,9 @@ div.container {
 }
 
 .form-group label {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--primary-color);
+  margin-bottom: 5px;
 }
 
 .form-group input,
@@ -128,6 +129,8 @@ textarea {
   margin-bottom: 20px;
   border: 1px solid var(--border-color);
   border-radius: 5px;
+  font-size: 1.1rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 .form-group input:focus,
