@@ -197,3 +197,29 @@ header a:hover{
   transition: all 0.3s ease;
   text-decoration: underline;
 }
+
+.status-message {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.status-message.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.error-message {
+  color: #721c24; 
+  font-size: 14px; 
+  margin-top: 4px; 
+  margin-bottom: 10px;
+  font-weight: 500; 
+  display: block; 
+}
