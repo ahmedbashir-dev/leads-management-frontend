@@ -165,7 +165,7 @@ header{
   padding: 20px 40px;
   background-color: var(--background-light);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  position: fixed;
+  border-bottom: 1px solid var(--border-color);
   width: 100%;
 
 }
@@ -222,4 +222,106 @@ header a:hover{
   margin-bottom: 10px;
   font-weight: 500; 
   display: block; 
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    height: unset;
+    
+  }
+
+  .hero-section-left img{
+    display: none;
+  }
+
+  .hero-section-left h2 {
+    font-size: 2.5rem;
+
+  }
+
+  .hero-section-left p {
+    font-size: 1rem;
+    padding-left: 0;
+  }
+
+  .hero-img {
+    width: 60%;
+  }
+
+  .hero-section-right {
+    margin-top: 20px;
+  }
+
+  .lead-form {
+    padding: 20px;
+  }
+
+  .form-group label{
+    text-align: left;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .lead-form > button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-container {
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+    height: unset;
+  }
+
+  .hero-section-left h2 {
+    font-size: 3rem;
+  }
+
+  .hero-section-left p {
+    font-size: 1.1rem;
+    padding-left: 0;
+  }
+
+  .hero-img {
+    width: 40%;
+  }
+
+  .hero-section-right {
+    margin-top: 20px;
+  }
+
+  .lead-form {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+
+  .lead-form > button {
+    font-size: 1.1rem;
+    padding: 14px;
+  }
+
+  header {
+    padding: 15px 30px;
+  }
+
+  header h2 {
+    font-size: 1.6rem;
+  }
 }
