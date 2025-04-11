@@ -40,6 +40,7 @@ function formatPhoneNumber(value) {
 
 export default function LeadForm() {
     const [formState, dispatch] = useReducer(leadFormReducer, initialState);
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const [errors, setErrors] = useState({});
     const [statusMessage, setStatusMessage] = useState(null);
 
@@ -81,8 +82,8 @@ export default function LeadForm() {
         if (!validateForm()) return;
 
         try {
+            setIsSubmitting(true);
             const response = await submitLead(formState); 
-            console.log(response);
             setStatusMessage({ type: "success", text: "Form submitted successfully!" });
             dispatch({ type: "RESET_FORM" });
             setErrors({});
@@ -93,6 +94,7 @@ export default function LeadForm() {
             console.error("Error submitting form:", error);
             setStatusMessage({ type: "error", text: "Failed to submit form. Please try again." });
         }
+        setIsSubmitting(false);
     }
 
     return (
@@ -130,7 +132,8 @@ export default function LeadForm() {
                 <textarea id="notes" value={formState.notes} name="notes" onChange={handleChange} ></textarea>
             </div>
 
-            <button type="submit" className="btn">Get Assistance</button>
+            <button disabled={isSubmitting} type="submit" className="btn">
+                {isSubmitting ? "Submitting" : "Get Assistance"}</button>
         </form>
     )
 }
