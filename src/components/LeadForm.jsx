@@ -117,17 +117,17 @@ export default function LeadForm() {
 
             <div className="form-group">
                 <label htmlFor="phoneNumber">Phone</label>
-                <input type="tel" id="phoneNumber" name="phoneNumber" value={formState.phoneNumber} onChange={handleChange} required />
+                <input type="tel" id="phoneNumber" name="phoneNumber" value={formState.phoneNumber} onChange={handleChange}  />
             </div>
 
             <div className="form-group">
                 <label htmlFor="company">Company</label>
-                <input type="text" id="company" name="company" value={formState.company} onChange={handleChange} required />
+                <input type="text" id="company" name="company" value={formState.company} onChange={handleChange}  />
             </div>
 
             <div className="form-group">
                 <label htmlFor="notes">Notes</label>
-                <textarea id="notes" value={formState.notes} name="notes" onChange={handleChange} required></textarea>
+                <textarea id="notes" value={formState.notes} name="notes" onChange={handleChange} ></textarea>
             </div>
 
             <button type="submit" className="btn">Get Assistance</button>
