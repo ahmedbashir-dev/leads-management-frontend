@@ -23,6 +23,20 @@ function leadFormReducer(state, action) {
     }
 }
 
+function formatPhoneNumber(value) {
+    // Remove non-numeric characters
+    const cleaned = value.replace(/\D/g, "");
+    
+    // Format as (XXX) XXX-XXXX
+    if (cleaned.length <= 3) {
+        return cleaned;
+    } else if (cleaned.length <= 6) {
+        return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3)}`;
+    } else {
+        return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3, 6)}-${cleaned.slice(6, 10)}`;
+    }
+}
+
 
 export default function LeadForm() {
     const [formState, dispatch] = useReducer(leadFormReducer, initialState);
@@ -30,11 +44,21 @@ export default function LeadForm() {
     const [statusMessage, setStatusMessage] = useState(null);
 
     function handleChange(event) {
-        dispatch({
-            type: "UPDATE_FIELD",
-            field: event.target.name,
-            value: event.target.value
-        })
+        const { name, value } = event.target;
+        if (name === "phoneNumber") {
+            const formattedPhone = formatPhoneNumber(value);
+            dispatch({
+                type: "UPDATE_FIELD",
+                field: name,
+                value: formattedPhone,
+            });
+        } else {
+            dispatch({
+                type: "UPDATE_FIELD",
+                field: name,
+                value,
+            });
+        }
     }
 
 
