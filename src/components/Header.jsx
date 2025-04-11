@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../assets/health.png";
 
 export default function Header() {
@@ -10,7 +11,7 @@ export default function Header() {
                 </h2>
             </div>
             <nav>
-                <a href="">Leads</a>
+                <Link to="/leads">Leads</Link>
             </nav>
         </header>
     )

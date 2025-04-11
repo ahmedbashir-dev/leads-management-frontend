@@ -27,6 +27,7 @@ body {
 div.container {
   width: 100%;
   height: 100vh;
+  
 }
 
 /**
@@ -324,4 +325,86 @@ header a:hover{
   header h2 {
     font-size: 1.6rem;
   }
+}
+
+
+.leads-list-container {
+  /* margin-top: 20px; */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px var(--box-shadow-color);
+}
+
+.leads-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.leads-table th,
+.leads-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.leads-table th {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.leads-table tr:hover {
+  background-color: var(--background-form);
+}
+
+.error-message {
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 10px;
+  background-color: #f8d7da;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .leads-table th, .leads-table td {
+      font-size: 0.9rem;
+      padding: 8px;
+  }
+}
+
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Moves it back by half of its own width and height */
+  display: inline-grid;
+  padding: 5px;
+  background: #fff;
+  filter: blur(4px) contrast(12);
+}
+.loader:before,
+.loader:after {
+  content: "";
+  grid-area: 1/1;
+  height: 40px;
+  aspect-ratio: 3;
+  --c: #0000 64%,#000 66% 98%,#0000 101%;
+  background:
+    radial-gradient(35% 146% at 50% 159%,var(--c)) 0 0,
+    radial-gradient(35% 146% at 50% -59%,var(--c)) 100% 100%;
+  background-size: calc(200%/3) 50%;
+  background-repeat: repeat-x;
+  clip-path: inset(0 100% 0 0);
+  animation: l16 1.5s infinite linear;
+}
+.loader:after {
+  scale: -1 1;
+  animation-delay: -.75s;
+}
+@keyframes l16{
+  50% {clip-path: inset(0)}
+  to {clip-path: inset(0 0 0 100%)}
 }

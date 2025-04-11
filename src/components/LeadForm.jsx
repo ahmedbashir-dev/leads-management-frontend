@@ -1,9 +1,8 @@
-import axios from "axios";
 import { useState } from "react";
 import { useReducer } from "react";
+import { submitLead } from "../services/leadService";
 
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const initialState = {
     fullName: "",
@@ -58,8 +57,8 @@ export default function LeadForm() {
         if (!validateForm()) return;
 
         try {
-            const response = await axios.post(`${API_BASE_URL}/leads`, formState);
-            console.log("Response:", response.data);
+            const response = await submitLead(formState); 
+            console.log(response);
             setStatusMessage({ type: "success", text: "Form submitted successfully!" });
             dispatch({ type: "RESET_FORM" });
             setErrors({});
