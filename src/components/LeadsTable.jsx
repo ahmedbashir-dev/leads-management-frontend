@@ -25,9 +25,9 @@ export default function LeadsTable({leads}) {
                             <tr key={lead.id}>
                                 <td>{lead.fullName}</td>
                                 <td>{lead.email}</td>
-                                <td>{lead.phoneNumber ?? "Not available"}</td>
-                                <td>{lead.company ?? "Not available"}</td>
-                                <td>{lead.notes ?? "Not available"}</td>
+                                <td>{lead.phoneNumber?.trim() === "" ? "Not available" : lead.phoneNumber}</td>
+                                <td>{lead.company?.trim() === "" ? "Not available" : lead.company }</td>
+                                <td>{lead.notes?.trim() ? "Not available" : lead.notes}</td>
                             </tr>
                         ))
                     )}
