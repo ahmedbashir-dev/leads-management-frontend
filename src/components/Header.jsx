@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/health.png";
 
 export default function Header() {
@@ -10,8 +10,13 @@ export default function Header() {
                     VitalHands
                 </h2>
             </div>
-            <nav>
-                <Link to="/leads">Leads</Link>
+            <nav className="nav">
+                <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+                    Home
+                </NavLink>
+                <NavLink to="/leads" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+                    Leads
+                </NavLink>
             </nav>
         </header>
     )

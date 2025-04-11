@@ -374,7 +374,9 @@ header a:hover{
   }
 }
 
-
+/**
+  * Loader styles
+  */
 .loader {
   position: absolute;
   top: 50%;
@@ -407,4 +409,33 @@ header a:hover{
 @keyframes l16{
   50% {clip-path: inset(0)}
   to {clip-path: inset(0 0 0 100%)}
+}
+
+/**
+ * Nav
+ */
+
+ .nav{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+ }
+
+ .nav-link {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 5px 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.active {
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
 }
